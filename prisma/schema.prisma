@@ -7,7 +7,162 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
-  id   Int    @id @default(autoincrement())
-  nome String @db.VarChar(60)
+model cards {
+  idCards     Int       @id @default(autoincrement())
+  title       String?   @db.VarChar(20)
+  description String    @db.VarChar(255)
+  fkProd      String    @db.VarChar(60)
+  fkLanguage  Int
+  languages   languages @relation(fields: [fkLanguage], references: [idLanguages], onDelete: NoAction, onUpdate: NoAction, map: "IDLanguageCards")
+  product     product   @relation(fields: [fkProd], references: [codeId], onDelete: NoAction, onUpdate: NoAction, map: "IDProdCards")
+
+  @@index([fkLanguage], map: "fkIdioma_idx")
+  @@index([fkProd], map: "fkProd_idx")
+}
+
+model categories {
+  idCategories Int       @id @default(autoincrement())
+  fkCategory   Int
+  fkLanguage   Int
+  category     category  @relation(fields: [fkCategory], references: [idCategory], onDelete: NoAction, onUpdate: NoAction, map: "IdCategoryCategories")
+  languages    languages @relation(fields: [fkLanguage], references: [idLanguages], onDelete: NoAction, onUpdate: NoAction, map: "IdLanguageCategories")
+  product      product[]
+  videos       videos[]
+
+  @@index([fkCategory], map: "IdCategoryCategories_idx")
+  @@index([fkLanguage], map: "IdLanguageCategories_idx")
+}
+
+model category {
+  idCategory  Int           @id @default(autoincrement())
+  name        String        @db.VarChar(45)
+  categories  categories[]
+  subcategory subcategory[]
+}
+
+model imgmontage {
+  idImgMontage  Int             @id @default(autoincrement())
+  img           String          @db.VarChar(45)
+  subtitleimage subtitleimage[]
+}
+
+model infolog {
+  idLog  Int      @id @default(autoincrement())
+  action String   @db.VarChar(60)
+  fkUser Int
+  date   DateTime @db.DateTime(0)
+  login  login    @relation(fields: [fkUser], references: [idLogin], onDelete: NoAction, onUpdate: NoAction, map: "fkUser")
+
+  @@index([fkUser], map: "fkUser_idx")
+}
+
+model languages {
+  idLanguages     Int               @id @default(autoincrement())
+  language        String            @db.VarChar(45)
+  cards           cards[]
+  categories      categories[]
+  pdf             pdf[]
+  productsinfo    productsinfo[]
+  subtitlemontage subtitlemontage[]
+  videos          videos[]
+}
+
+model login {
+  idLogin  Int       @id @default(autoincrement())
+  user     String    @db.VarChar(45)
+  password String    @db.VarChar(45)
+  infolog  infolog[]
+}
+
+model montage {
+  idMontage       Int           @id @default(autoincrement())
+  img_guide       String        @db.VarChar(60)
+  fkSubtitleImage Int
+  subtitleimage   subtitleimage @relation(fields: [fkSubtitleImage], references: [idSubtitleImage], onDelete: NoAction, onUpdate: NoAction, map: "IDSubititleImage")
+  product         product[]
+
+  @@index([fkSubtitleImage], map: "IDSubititleImage_idx")
+}
+
+model pdf {
+  idPDF      Int       @id @default(autoincrement())
+  pdf        String    @db.VarChar(60)
+  fkProd     String    @db.VarChar(60)
+  fkLanguage Int
+  languages  languages @relation(fields: [fkLanguage], references: [idLanguages], onDelete: NoAction, onUpdate: NoAction, map: "IDLanguagePDF")
+  product    product   @relation(fields: [fkProd], references: [codeId], onDelete: NoAction, onUpdate: NoAction, map: "IDProdPDF")
+
+  @@index([fkLanguage], map: "fkIdioma_idx")
+  @@index([fkProd], map: "fkProd_idx")
+}
+
+model product {
+  codeId        String         @id @db.VarChar(60)
+  img_prod      String         @db.VarChar(60)
+  fkMontage     Int
+  fkCartegories Int
+  cards         cards[]
+  pdf           pdf[]
+  categories    categories     @relation(fields: [fkCartegories], references: [idCategories], onDelete: NoAction, onUpdate: NoAction, map: "fkCartegories")
+  montage       montage        @relation(fields: [fkMontage], references: [idMontage], onDelete: NoAction, onUpdate: NoAction, map: "fkMontage")
+  productsinfo  productsinfo[]
+
+  @@index([fkCartegories], map: "fkCartegories_idx")
+  @@index([fkMontage], map: "fkMontagem_idx")
+}
+
+model productsinfo {
+  idProd     Int       @id @default(autoincrement())
+  name       String    @db.VarChar(60)
+  fkProd     String    @db.VarChar(60)
+  fkLanguage Int
+  languages  languages @relation(fields: [fkLanguage], references: [idLanguages], onDelete: NoAction, onUpdate: NoAction, map: "IDLanguageProducts")
+  product    product   @relation(fields: [fkProd], references: [codeId], onDelete: NoAction, onUpdate: NoAction, map: "IDProdInfos")
+
+  @@index([fkLanguage], map: "IDLanguageProducts_idx")
+  @@index([fkProd], map: "IDProdInfos_idx")
+}
+
+model subcategory {
+  idSubcategory Int      @id @default(autoincrement())
+  name          String   @db.VarChar(45)
+  fkCategory    Int
+  category      category @relation(fields: [fkCategory], references: [idCategory], onDelete: NoAction, onUpdate: NoAction, map: "fkCategorySub")
+
+  @@index([fkCategory], map: "fkCategorySub_idx")
+}
+
+model subtitleimage {
+  idSubtitleImage Int             @id @default(autoincrement())
+  fkImg           Int
+  fkSubtitle      Int
+  montage         montage[]
+  imgmontage      imgmontage      @relation(fields: [fkImg], references: [idImgMontage], onDelete: NoAction, onUpdate: NoAction, map: "IDImage")
+  subtitlemontage subtitlemontage @relation(fields: [fkSubtitle], references: [idSubtitle], onDelete: NoAction, onUpdate: NoAction, map: "IDSubtitle")
+
+  @@index([fkImg], map: "IDImage_idx")
+  @@index([fkSubtitle], map: "IDSubtitle_idx")
+}
+
+model subtitlemontage {
+  idSubtitle    Int             @id @default(autoincrement())
+  subititleImg  String          @db.VarChar(45)
+  fkLanguage    Int
+  subtitleimage subtitleimage[]
+  languages     languages       @relation(fields: [fkLanguage], references: [idLanguages], onDelete: NoAction, onUpdate: NoAction, map: "IDLanguageMontage")
+
+  @@index([fkLanguage], map: "IDLanguageMontage_idx")
+}
+
+model videos {
+  idVideo      Int        @id @default(autoincrement())
+  title        String     @db.VarChar(45)
+  codLink      String     @db.VarChar(100)
+  fkLanguage   Int
+  fkCategories Int
+  categories   categories @relation(fields: [fkCategories], references: [idCategories], onDelete: NoAction, onUpdate: NoAction, map: "IDCategoriesVideo")
+  languages    languages  @relation(fields: [fkLanguage], references: [idLanguages], onDelete: NoAction, onUpdate: NoAction, map: "IDLanguageVideo")
+
+  @@index([fkCategories], map: "IDCategoriesVideo_idx")
+  @@index([fkLanguage], map: "fkLanguage_idx")
 }
