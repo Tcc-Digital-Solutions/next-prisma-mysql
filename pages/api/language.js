@@ -26,6 +26,9 @@ export default async function handle(req, res) {
         res.json(update)
     }
     else if(req.method == 'DELETE'){
-        
+        const id = req.body.id
+        await prisma.languages.delete({
+            where: {idLanguages: parseInt(id)}
+        })
     }
 }
