@@ -1,4 +1,5 @@
 import { prisma } from '../../prisma/prisma'
+
 export default async function handle(req, res) {
     if (req.method === 'GET'){
         const allLanguages = await prisma.languages.findMany()
@@ -32,3 +33,4 @@ export default async function handle(req, res) {
         })
     }
 }
+/**  ver se vai ficar atualizando a página toda  vez no delete */

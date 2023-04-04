@@ -5,12 +5,12 @@ export default function Cadastro(){
     const [newLanguage, setNewLanguage] = useState('')
 
     const postLanguage = async () =>{
-        await fetch('./api/language', {
+        await fetch('./api/languages', {
             method: 'POST',
             body: JSON.stringify({newLanguage}),
             headers: {'Content-Type': 'application/json'}
         })
-        mutate('./api/language')
+        mutate('./api/languages')
     }  
 
     return(
