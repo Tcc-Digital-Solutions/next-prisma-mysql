@@ -1,0 +1,16 @@
+.button-logoff-div{
+
+}
+.button-logoff-button{
+    width: 38px;
+    height: 36px;
+    background-color: #ffffff00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor:pointer;
+    margin-right: 10px;
+}

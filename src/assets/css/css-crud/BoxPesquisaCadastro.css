@@ -1,0 +1,53 @@
+.box-pesquisa-cadastro-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.box-pesquisa-cadastro-menu{
+    width: 365px;
+    height: 100%;
+    background-color: #ffffff;
+    border: solid 1px #000;
+}
+
+.box-pesquisa-cadastro-inputPesquisa{
+    width: 100%;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ffffff;
+    
+}
+.box-pesquisa-cadastro-inputPesquisa-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 237px;
+}
+
+.box-pesquisa-cadastro-inputPesquisa-buttons-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 161px;
+    justify-content: space-around;
+}
+.box-pesquisa-cadastro-inputPesquisa-buttons{
+    font-family: var(--fonte);
+    background-color: #ffffff;
+    height: 39px;
+    margin-left: 9px;
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+#box-pesquisa-cadastro-inputPesquisa-input{
+    background-color: #ffffff !important;
+}

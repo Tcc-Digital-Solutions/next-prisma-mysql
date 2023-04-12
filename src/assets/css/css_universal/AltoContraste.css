@@ -1,0 +1,36 @@
+
+.AltoContraste-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 11px;
+}
+
+.AltoContraste-box{
+    height: 38px;
+    width: 172px;
+}
+.AltoContraste-box-fechar{
+    display: none;
+}
+.AltoContraste-button{
+    background-color: #ffffff00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.AltoContraste-button:hover {
+opacity: 1;
+transform: translateY(0);
+transition-duration: .35s;
+}
+  
+.AltoContraste-button:active {
+transform: translateY(2px);
+transition-duration: .35s;
+}

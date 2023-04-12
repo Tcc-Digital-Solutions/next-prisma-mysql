@@ -1,0 +1,22 @@
+.button-audio{
+    cursor: pointer;
+    border-radius: 25px;
+    border: 0;
+    display: flex;
+    width: 46px !important;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+ .button-audio:hover {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
+  
+  .button-audio:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }

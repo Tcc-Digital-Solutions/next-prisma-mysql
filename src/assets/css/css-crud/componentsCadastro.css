@@ -1,0 +1,41 @@
+.components-cadastro-div{
+    overflow: auto;
+    height: 100%;
+    display: flex;
+}
+.components-span-center{
+    width: 100%;
+    height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.components-span-center-button{
+    width: 100%;
+    height: 132px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.components-cadastro-span{
+    width: 100%;
+    height: 1288px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.components-cadastro-true{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.components-cadastro-form{
+    width: 100%;
+}

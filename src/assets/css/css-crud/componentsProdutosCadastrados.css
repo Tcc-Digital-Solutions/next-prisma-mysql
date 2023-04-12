@@ -1,0 +1,6 @@
+.components-Produtos-Cadastrados-div-produto{
+    overflow: auto;
+    height: 339px;
+    display: flex;
+    flex-direction: column;
+}

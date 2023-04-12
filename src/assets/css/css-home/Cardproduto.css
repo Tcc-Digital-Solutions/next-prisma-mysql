@@ -1,0 +1,101 @@
+.Cardproduto-div{
+    font-family: var(--font);
+    border-radius: 10px;
+    width: 295px;
+    height: 468px;
+    border: 1px solid #4970A9;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-shadow:23px 18px #4970A9;
+}
+
+.Cardproduto-div-text{
+    width: 241px;
+}
+.Cardproduto-div-02{
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.Cardproduto-div-03{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+}
+
+.Cardproduto-button{
+    border: 0;
+    color: #ffffff;
+    font-size: 17px;
+    background-color: #4970A9;
+    width: 167px;
+    height: 48px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Cardproduto-button:hover{
+    
+    background-color: #2f5183;
+    transition-duration: 0.4s
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1250px) {
+
+    .box-categoria-ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: inherit;
+        list-style: none;
+        width: 900px;
+    }
+
+    .Cardproduto-div{
+        font-family: var(--font);
+        border-radius: 10px;
+        width: 230px;
+        height: 370px;
+        border: 1px solid #4970A9;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        box-shadow:19px 15px #4970A9;
+    }
+    .Cardproduto-button{
+        border: 0;
+        color: #ffffff;
+        font-size: 15px;
+        background-color: #4970A9;
+        width: 120px;
+        height: 35px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .Cardproduto-div-text{
+        font-size: 17px;
+        width: 200px;
+    }
+
+    .img-card{
+        width: 170px ;
+        height: 160px;
+    }
+    .Cardproduto-div-03{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 110px;
+    }
+}

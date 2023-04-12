@@ -1,0 +1,45 @@
+.css-b62m3t-container  {
+    margin-top: 0px !important;
+    width: 186px !important;
+}
+.translate-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 11px;
+}
+
+.translate-box{
+    height: 38px;
+    width: 250px;
+}
+.translate-box-fechar{
+    display: none;
+}
+.translate-button{
+    width: 52px;
+    height: 36px;
+    background-color: #ffffff00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+.translate-box .css-b62m3t-container {
+    width: 260px !important;
+}
+
+
+.translate-button:hover {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
+  
+  .translate-button:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }

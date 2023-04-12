@@ -9,7 +9,7 @@ datasource db {
 
 model cards {
   idCards     Int       @id @default(autoincrement())
-  title       String?   @db.VarChar(20)
+  title       String    @db.VarChar(20)
   description String    @db.VarChar(255)
   fkProd      String    @db.VarChar(60)
   fkLanguage  Int
@@ -58,7 +58,7 @@ model infolog {
 
 model languages {
   idLanguages     Int               @id @default(autoincrement())
-  language        String            @db.VarChar(45)
+  sigla           String            @db.VarChar(20)
   cards           cards[]
   categories      categories[]
   pdf             pdf[]

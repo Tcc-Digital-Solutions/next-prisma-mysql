@@ -1,0 +1,245 @@
+.box-manual-cadastrados-div{
+    height: 100%;
+    width: 100%;
+    margin-top: 70px;
+    position: fixed;
+}
+
+.box-manual-cadastrados-span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.box-manual-cadastrados-button{
+    width: 38px;
+    height: 36px;
+    background-color: #ffffff00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor:pointer;
+}
+
+.box-manual-cadastrados-scrool-span{
+    overflow:auto; 
+    height: 100%;
+    width: 100%;
+}
+
+.Box-edit-produto-text{
+    font-family: var(--fonte);
+}
+
+.box-manual-cadastrados-menu{
+    width: 100%;
+    left: 0%;
+    height: 84%;
+    position: fixed;
+    margin-top: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.box-manual-cadastrados-menu-fechar{
+    display: none;
+}
+
+.box-manual-cadastrados-button{
+    width: 38px;
+    height: 36px;
+    background-color: #ffffff00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor:pointer;
+}
+
+.box-manual-cadastrados-01{
+    font-family: var(--fonte);
+    font-size: 25px;
+    display: flex;
+    height: 31px;
+    color: rgb(0, 0, 0);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-bottom: solid 1px #000;
+}
+
+.box-manual-cadastrados-02{
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.box-manual-cadastrados-button-x{
+    width: 38px;
+    height: 36px;
+    background-color: #ffffff00;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    right: 0px;
+}
+
+.box-manual-cadastrados-port-01{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fack-div{
+    width: 100px;
+}
+.box-manual-cadastrados-port-02{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+._inputItem_18w4i_1 {
+    padding: 5px;
+    background: #1f5b94 !important;
+    margin-right: 5px;
+    color: white;
+    border-radius: 10px;
+}
+
+.multiple-value-text-input{
+    width: 454px !important;
+}
+
+.css-b62m3t-container{
+    width: 454px !important;
+    height: 30px !important;
+    margin-top: 15px;
+}
+
+._inputElement_jafxa_1, ._inputLabel_jafxa_3 {
+    width: 454px !important;
+    height: 37px;
+    margin-top: 17px;
+}
+
+.inputMult{
+    width: 454px !important;
+    height: 37px;
+    margin-top: 15px;
+}
+
+.box-manual-text{
+    margin-bottom: 12px;
+}
+
+
+.button-65 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #3261A8;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-65:hover {
+  background-color: #34578b;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-65:hover:after {
+  opacity: .5;
+}
+
+.button-65:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-65:active:after {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .button-65 {
+    padding: 14px 22px;
+    width: 454px !important;
+    margin-top: 15px;
+  }
+}
+
+#imgUpload::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  #imgPdf::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+#imgUpload::before {
+/* content: 'Clique e selecione as imagens'; */
+padding: 5px 8px;
+outline: none;
+font-size: 10pt;
+}
+
+#imgPdf::before {
+/* content: 'Clique e carregue seu pdf'; */
+padding: 5px 8px;
+outline: none;
+font-size: 10pt;
+}
+
